@@ -83,14 +83,18 @@ def setup():
         '2002': greg,
     }
 
+
 def get_developer(id):
     return developer_data.get(id)
+
 
 def get_manager(id):
     return manager_data.get(id)
 
+
 def get_employee(id):
     return developer_data.get(id) or manager_data.get(id)
+
 
 def get_teammates(employee):
     return map(get_employee, employee.teammates)

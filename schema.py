@@ -41,14 +41,13 @@ class Query(graphene.ObjectType):
     developer = graphene.Field(Developer, id=graphene.String())
     manager = graphene.Field(Manager, id=graphene.String())
 
-    def resolve_employee(info, id):
-        return 'emplyee'
-        # return get_employee(id)
+    def resolve_employee(self, info, id):
+        return get_employee(id)
 
-    def resolve_developer(info, id):
+    def resolve_developer(self, info, id):
         return get_developer(id)
 
-    def resolve_manager(info, id):
+    def resolve_manager(self, info, id):
         return get_manager(id)
 
 
